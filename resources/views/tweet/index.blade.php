@@ -20,6 +20,11 @@
             @enderror
             <button type="submit">投稿</button>
         </form>
+        <div>
+        @foreach ($tweets as $tweet)
+            <p>{{ $tweet->content }}</p>
+        @endforeach
+    </div>
     </div>
 </body>
 </html>
