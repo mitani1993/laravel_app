@@ -14,9 +14,8 @@ class IndexController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request)
+    public function __invoke(Request $request, TweetService $tweetService)
     {
-        $tweetService = new TweetService();
         $tweets = $tweetService->getTweets();
 
         return view('tweet.index')
