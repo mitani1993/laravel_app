@@ -21,7 +21,9 @@ class LoginTest extends DuskTestCase
             $browser->visit('/login')
                 ->type('email', $user->email)
                 ->type('password', 'password')
-                ->assertSee('Laravel');
+                ->press('LOG IN')
+                ->assertPathIs('/tweet')
+                ->assertSee('つぶやきアプリ');
         });
     }
 }
