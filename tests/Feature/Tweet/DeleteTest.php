@@ -8,15 +8,17 @@ use Tests\TestCase;
 
 class DeleteTest extends TestCase
 {
+    use RefreshDatabase;
+
     /**
-     * A basic feature test example.
+     * A basic feature test delete successed.
      *
      * @return void
      */
-    public function test_example()
+    public function test_delete_successed()
     {
-        $response = $this->get('/');
+        $response = $this->delete('/tweet/delete/1');
 
-        $response->assertStatus(200);
+        $response->assertRedirect('/tweet');
     }
 }
